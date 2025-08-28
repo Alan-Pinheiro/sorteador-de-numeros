@@ -9,6 +9,11 @@ function sortear() {
 
     while(contador < quantidade) {
         numero = sorteiaNumero(de, ate);
+
+        while(numerosSorteados.includes(numero)) {
+            numero = sorteiaNumero(de, ate);
+        }
+
         numerosSorteados.push(numero);
         contador++;
     }
@@ -24,3 +29,4 @@ function exibirNumerosSorteados(numeros) {
     let sorteados = document.getElementById('resultado');
     sorteados.innerHTML = `<label class="texto__paragrafo">Números sorteados:  ${numeros}</label>`
 }
+
